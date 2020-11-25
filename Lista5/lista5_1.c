@@ -35,7 +35,7 @@ int main(int argc, const char * argv[]) {
         close(fd[READ_FD]);
         
         if (!(plik=fopen(argv[1],"r"))) {
-            fprintf(stderr, "Błąd przy otwarciu pliku");
+            fprintf(stderr, "Błąd przy otwarciu pliku!");
             return 2;
         }
 
@@ -44,8 +44,6 @@ int main(int argc, const char * argv[]) {
             write(fd[1],buf,BUFFOR);
         }
         
-        buf[BUFFOR-1]=0;
-        write(fd[1],buf,BUFFOR);
         fclose(plik);
     }
 
