@@ -23,8 +23,8 @@ int main(int argc, const char * argv[]) {
         close(fd[WRITE_FD]);
         
         while(read(fd[READ_FD], buf, BUFFOR)) {
-            if (buf[BUFFOR]!=0) {
-                buf[BUFFOR]='\0';
+            if (buf[BUFFOR-1]!=0) {
+                buf[BUFFOR-1]='\0';
                 printf("# %s #\n",buf);
             }
             else break;
@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
         }
 
         while (fgets(buf,BUFFOR,plik)){
-            buf[BUFFOR]=1;
+            buf[BUFFOR-1]=1;
             write(fd[1],buf,BUFFOR);
         }
         
