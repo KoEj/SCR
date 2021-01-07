@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
     pthread_attr_getstacksize (&attr, &stacksize);
     printf("Thread stack size = %li bytes NORMAL\n",stacksize);
     
-    stacksize=sizeof(double)*ARRAY_SIZE*NTHREADS*NTHREADS*10;
+    stacksize=sizeof(double)*ARRAY_SIZE*640;
     pthread_attr_setstacksize (&attr, stacksize);
     pthread_attr_getstacksize (&attr, &stacksize);
     printf("Thread stack size = %li bytes CHANGED\n",stacksize);
