@@ -20,10 +20,10 @@ void *Hello(void *threadid)
     double A[ARRAY_SIZE];
     int i;
     long tid;
-    size_t mystacksize;
+    //size_t mystacksize;
 
     tid = (long)threadid;
-    pthread_attr_getstacksize (&attr, &mystacksize);
+    //pthread_attr_getstacksize (&attr, &mystacksize);
     sleep(3);
     for (i=0; i<ARRAY_SIZE; i++) {
       A[i] = i * 1.0;
