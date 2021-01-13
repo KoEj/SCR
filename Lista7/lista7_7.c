@@ -17,16 +17,16 @@
 
 struct thread_data
 {
-   int  thread_id; //  czy punkt w kole
-   int  wheel;
+   int  thread_id; 
+   int  wheel;     //  czy punkt w kole
 };
 
 struct thread_data thread_data_array[NUM_THREADS];
 
 int wheel_MC() {
     double X, Y;
-    X=drand48();
-    Y=drand48();
+    X=2*drand48();
+    Y=2*drand48();
     if(sqrt(((X-1)*(X-1))+((Y-1)*(Y-1)))<=1) return 1;
     else return 0;
 }
